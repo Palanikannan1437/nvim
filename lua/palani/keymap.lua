@@ -20,6 +20,4 @@ M.vnoremap = bind("v")
 M.xnoremap = bind("x")
 M.inoremap = bind("i")
 
-keymap("n", "<leader>f", "<cmd>Telescope git_files<cr>",opts)
-
 return M

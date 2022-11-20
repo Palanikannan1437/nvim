@@ -1,3 +1,4 @@
 require("palani.set")
 require("palani.remap")
-require("palani.treesitter")
+require("palani.coc-remap")
+
