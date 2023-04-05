@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"css","cpp","javascript","gitignore","go","html","json","lua","tsx","java","html","dockerfile"},
+  ensure_installed = {"css","cpp","javascript","gitignore","go","html","json","lua","tsx","java","html","dockerfile","sql"},
   sync_install = false,
   auto_install = true,
 
@@ -7,10 +7,13 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     enable = true,
-    disable = { "" },
     additional_vim_regex_highlighting = false,
   },
-  indent = { enable=true }
+  indent = { enable=true },
+  context_commentstring = {
+    enable = true,
+    enable_automd = false,
+  }
 }
 
 
