@@ -31,3 +31,4 @@ vim.opt.updatetime = 50
 
 vim.opt.clipboard = "unnamedplus"
 vim.g.mapleader = " "
+vim.g.netrw_liststyle = 3
