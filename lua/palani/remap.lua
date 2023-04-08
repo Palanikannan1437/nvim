@@ -10,11 +10,8 @@ nnoremap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --window management
   --window navigation 
-    nnoremap("<C-h>", "<C-w>h")
-    nnoremap("<C-j>", "<C-w>j")
-    nnoremap("<C-k>", "<C-w>k")
-    nnoremap("<C-;>", "<C-w>l")
-  
+    -- nnoremap("<C-j>", "<C-w>h")
+    -- nnoremap("<C-k>", "<C-w>l")
   --window size management
     nnoremap("<C-Left>", ":vertical resize -3<CR>")
     nnoremap("<C-Right>", ":vertical resize +3<CR>")

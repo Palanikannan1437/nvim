@@ -1,14 +1,6 @@
 local Remap = require("palani.keymap")
 local nnoremap = Remap.nnoremap
 
-nnoremap("<Leader>f", function()
-  require('telescope.builtin').find_files()
-end)
-
-nnoremap("<Leader>g", function()
-  require('telescope.builtin').live_grep()
-end)
-
 -- telescope settings
 local actions = require("telescope.actions")
 
@@ -64,3 +56,26 @@ require("telescope").setup({
 })
 
 require('telescope').load_extension('fzf')
+
+function FuzzyFindFiles()
+  require('telescope.builtin').grep_string({
+    path_display = { 'smart' },
+    only_sort_text = true,
+    word_match = "-w",
+    search = '',
+    shorten_path = true,
+    layout_config = {
+      preview_width = 0.6,
+    },
+  })
+end
+
+nnoremap("<Leader>f", function()
+  require('telescope.builtin').find_files()
+end)
+
+nnoremap("<Leader>g", '<cmd>lua FuzzyFindFiles{}<cr>')
+
+-- nnoremap("<Leader>g", function()
+--   require('telescope.builtin').live_grep()
+-- end)

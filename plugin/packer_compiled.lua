@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -175,6 +180,11 @@ _G.packer_plugins = {
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  tagbar = {
+    loaded = true,
+    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/tagbar",
+    url = "https://github.com/preservim/tagbar"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -200,6 +210,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/vim-github-dark",
     url = "https://github.com/wojciechkepka/vim-github-dark"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   }
 }
 
