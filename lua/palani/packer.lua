@@ -15,14 +15,9 @@ return require("packer").startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run =
   'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
-
-  -- vim terminal float
-  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end }
-
   -- window navigation
   use("christoomey/vim-tmux-navigator")
+
   -- comments in nvim
   use {
     'numToStr/Comment.nvim',
@@ -33,14 +28,13 @@ return require("packer").startup(function(use)
 
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
+  use 'github/copilot.vim'
+
   -- color theme
   use('marko-cerovac/material.nvim')
-  use('wojciechkepka/vim-github-dark')
-  --
-  use('ThePrimeagen/harpoon')
 
-  -- vim game
-  use('ThePrimeagen/vim-be-good')
+  -- harpooooon for quick file switching
+  use('ThePrimeagen/harpoon')
 
   -- treesitter syntax highlighting
   use {
@@ -48,9 +42,8 @@ return require("packer").startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
-  -- tagbar for easily seeing functions, tags, constants, etc in a file buffer
-  -- dependency --> brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-  use "preservim/tagbar"
+  -- lazy git floating window
+  use('kdheepak/lazygit.nvim')
 
   -- lsp
   use {
@@ -72,14 +65,6 @@ return require("packer").startup(function(use)
       -- Snippets
       { 'L3MON4D3/LuaSnip' },
       { 'rafamadriz/friendly-snippets' },
-    }
-  }
-
-  -- leap
-  use {
-    'ggandor/leap.nvim',
-    requires = {
-      { 'tpope/vim-repeat' }
     }
   }
 end)

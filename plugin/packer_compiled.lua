@@ -110,6 +110,11 @@ _G.packer_plugins = {
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -120,10 +125,10 @@ _G.packer_plugins = {
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
-  ["leap.nvim"] = {
+  ["lazygit.nvim"] = {
     loaded = true,
-    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/leap.nvim",
-    url = "https://github.com/ggandor/leap.nvim"
+    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -180,11 +185,6 @@ _G.packer_plugins = {
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  tagbar = {
-    loaded = true,
-    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/tagbar",
-    url = "https://github.com/preservim/tagbar"
-  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -195,27 +195,6 @@ _G.packer_plugins = {
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
-    loaded = true,
-    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["vim-be-good"] = {
-    loaded = true,
-    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/vim-be-good",
-    url = "https://github.com/ThePrimeagen/vim-be-good"
-  },
-  ["vim-github-dark"] = {
-    loaded = true,
-    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/vim-github-dark",
-    url = "https://github.com/wojciechkepka/vim-github-dark"
-  },
-  ["vim-repeat"] = {
-    loaded = true,
-    path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/vim-repeat",
-    url = "https://github.com/tpope/vim-repeat"
-  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/Users/palanikannan/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
@@ -224,10 +203,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
