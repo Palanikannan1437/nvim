@@ -1,4 +1,6 @@
 local opts = { noremap = true, silent = true }
+local luasnip = require 'luasnip'
+local cmp = require('cmp')
 local lsp = require('lsp-zero').preset({
   name = 'minimal',
   set_lsp_keymaps = true,
@@ -12,13 +14,24 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.keymap.set('n', '<space>i', '<cmd>LspZeroFormat<CR>', opts)
 
-local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-      ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-      ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-      ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-      ["<C-space>"] = cmp.mapping.complete(),
+  ['<C-p>'] = cmp.mapping.select_prev_item(),
+  ['<C-n>'] = cmp.mapping.select_next_item(),
+  ['<Tab>'] = function(fallback)
+    if cmp.visible() then
+      cmp.select_next_item()
+    elseif luasnip.expand_or_jumpable() then
+      luasnip.expand_or_jump()
+    else
+      fallback()
+    end
+  end,
+  ['<CR>'] = cmp.mapping.confirm {
+    behavior = cmp.ConfirmBehavior.Replace,
+    select = true,
+  },
+  ["<C-space>"] = cmp.mapping.complete(),
 })
 
 lsp.setup_nvim_cmp({
