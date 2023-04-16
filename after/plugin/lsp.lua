@@ -5,14 +5,16 @@ local lsp = require('lsp-zero').preset({
   name = 'minimal',
   set_lsp_keymaps = true,
   manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
+  suggest_lsp_servers = true,
 })
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-vim.keymap.set('n', '<space>i', '<cmd>LspZeroFormat<CR>', opts)
+vim.keymap.set({ 'n', 'x' }, '<leader>i', function()
+  vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+end)
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -39,7 +41,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-  suggest_lsp_servers = false,
+  suggest_lsp_servers = true,
   sign_icons = {
     error = 'E',
     warn = 'W',
@@ -52,4 +54,14 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 
-lsp.setup()
+lsp.setup(
+  {
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = { "vim" },
+        },
+      },
+    },
+  }
+)

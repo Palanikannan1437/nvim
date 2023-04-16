@@ -1,3 +1,3 @@
 require("palani.set")
 require("palani.remap")
-require("palani.lazy")
+require("palani.plugins")
