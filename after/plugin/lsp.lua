@@ -16,11 +16,10 @@ vim.keymap.set({ 'n', 'x' }, '<leader>i', function()
   vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
 end)
 
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
+-- local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(),
-  ['<C-n>'] = cmp.mapping.select_next_item(),
-  ['<Tab>'] = function(fallback)
+  ['<C-n>'] = function(fallback)
     if cmp.visible() then
       cmp.select_next_item()
     elseif luasnip.expand_or_jumpable() then
@@ -33,7 +32,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     behavior = cmp.ConfirmBehavior.Replace,
     select = true,
   },
-  ["<C-space>"] = cmp.mapping.complete(),
+  ['<Tab>'] = cmp.config.disable
 })
 
 lsp.setup_nvim_cmp({
@@ -54,14 +53,4 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 
-lsp.setup(
-  {
-    settings = {
-      Lua = {
-        diagnostics = {
-          globals = { "vim" },
-        },
-      },
-    },
-  }
-)
+lsp.setup()

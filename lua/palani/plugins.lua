@@ -35,7 +35,9 @@ require("lazy").setup({
 
   'JoosepAlviste/nvim-ts-context-commentstring',
 
-  'github/copilot.vim',
+  -- AI Autocompletion
+  -- 'github/copilot.vim',
+  'Exafunction/codeium.vim',
 
   -- color theme
   'marko-cerovac/material.nvim',
@@ -52,7 +54,20 @@ require("lazy").setup({
   -- lazy git floating window
   'kdheepak/lazygit.nvim',
 
+  -- vim in the browser
+
+  {
+    'glacambre/firenvim',
+    -- Lazy load firenvim
+    -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+    cond = not not vim.g.started_by_firenvim,
+    build = function()
+      require("lazy").load({ plugins = "firenvim", wait = true })
+      vim.fn["firenvim#install"](0)
+    end
+  },
   -- lsp
+
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
