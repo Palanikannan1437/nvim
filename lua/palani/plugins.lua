@@ -19,24 +19,23 @@ require("lazy").setup({
   -- icons
   'nvim-tree/nvim-web-devicons',
 
-  -- telescope plugins
-  'nvim-telescope/telescope.nvim',
+  -- fuzzy finder
+  'ibhagwan/fzf-lua',
 
   -- window navigation
   'christoomey/vim-tmux-navigator',
 
   -- comments in nvim
-  {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  },
+      {
+        'numToStr/Comment.nvim',
+        config = function()
+          require('Comment').setup()
+        end
+      },
 
   'JoosepAlviste/nvim-ts-context-commentstring',
 
   -- AI Autocompletion
-  -- 'github/copilot.vim',
   'Exafunction/codeium.vim',
 
   -- color theme
@@ -54,20 +53,7 @@ require("lazy").setup({
   -- lazy git floating window
   'kdheepak/lazygit.nvim',
 
-  -- vim in the browser
-
-  {
-    'glacambre/firenvim',
-    -- Lazy load firenvim
-    -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-    cond = not not vim.g.started_by_firenvim,
-    build = function()
-      require("lazy").load({ plugins = "firenvim", wait = true })
-      vim.fn["firenvim#install"](0)
-    end
-  },
   -- lsp
-
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
@@ -89,5 +75,4 @@ require("lazy").setup({
       'rafamadriz/friendly-snippets',
     }
   }
-
 })

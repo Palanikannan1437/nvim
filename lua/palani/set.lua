@@ -22,6 +22,9 @@ vim.opt.writebackup = false
 -- diagnostics appear/become resolved.
 vim.opt.signcolumn = "yes"
 
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
